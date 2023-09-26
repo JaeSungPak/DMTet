@@ -286,7 +286,7 @@ if __name__ == '__main__':
         python_requires='~=3.7',
 
         # Package info
-        packages=find_packages(exclude=('docs', 'tests')),
+        packages=find_packages(),
         scripts=get_scripts(),
         include_package_data=True,
         install_requires=get_requirements(),
