@@ -1,0 +1,76 @@
+
+{% extends "!layout.html" %}
+  {% block footer %} {{ super() }}
+  <style>
+    :root {
+      --nvidia-color: #76B900;
+      --dark-green: #008564;
+    }
+
+    a, a:visited, a:active {
+      color: var(--nvidia-color);
+    }
+
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background-color: var(--nvidia-color);
+    }
+    /* Sidebar */
+    .wy-menu-vertical header, .wy-menu-vertical p.caption {
+      color: #DFDFDF;
+    }
+    
+    .rst-content .note, .rst-content .seealso, .rst-content .wy-alert-info.admonition, .rst-content .wy-alert-info.admonition-todo, .rst-content .wy-alert-info.attention, .rst-content .wy-alert-info.caution, .rst-content .wy-alert-info.danger, .rst-content .wy-alert-info.error, .rst-content .wy-alert-info.hint, .rst-content .wy-alert-info.important, .rst-content .wy-alert-info.tip, .rst-content .wy-alert-info.warning, .wy-alert.wy-alert-info {
+       background: #eaefe0;
+    }
+    
+    .rst-content .note .admonition-title, .rst-content .note .wy-alert-title, .rst-content .seealso .admonition-title, .rst-content .seealso .wy-alert-title, .rst-content .wy-alert-info.admonition-todo .admonition-title, .rst-content .wy-alert-info.admonition-todo .wy-alert-title, .rst-content .wy-alert-info.admonition .admonition-title, .rst-content .wy-alert-info.admonition .wy-alert-title, .rst-content .wy-alert-info.attention .admonition-title, .rst-content .wy-alert-info.attention .wy-alert-title, .rst-content .wy-alert-info.caution .admonition-title, .rst-content .wy-alert-info.caution .wy-alert-title, .rst-content .wy-alert-info.danger .admonition-title, .rst-content .wy-alert-info.danger .wy-alert-title, .rst-content .wy-alert-info.error .admonition-title, .rst-content .wy-alert-info.error .wy-alert-title, .rst-content .wy-alert-info.hint .admonition-title, .rst-content .wy-alert-info.hint .wy-alert-title, .rst-content .wy-alert-info.important .admonition-title, .rst-content .wy-alert-info.important .wy-alert-title, .rst-content .wy-alert-info.tip .admonition-title, .rst-content .wy-alert-info.tip .wy-alert-title, .rst-content .wy-alert-info.warning .admonition-title, .rst-content .wy-alert-info.warning .wy-alert-title, .rst-content .wy-alert.wy-alert-info .admonition-title, .wy-alert.wy-alert-info .rst-content .admonition-title, .wy-alert.wy-alert-info .wy-alert-title {
+        background: #b8d27c;
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils) dl:not(.field-list)>dt, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) dl:not(.field-list):not(.simple)>dt.sig {
+        background-color: #eaefe0;
+        border-left: 3px solid var(--nvidia-color);
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils)>dt, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)>dt.sig {
+      background: #eaefe0;
+      border-top: 3px solid var(--nvidia-color);
+    }
+
+    html.writer-html4 .rst-content dl:not(.docutils)>dt, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)>dt {
+        color: var(--dark-green);
+    }
+
+    .icon, .version, a.icon.icon-home {
+        color: white;
+    }
+
+    table.center-align-center-col td {
+        text-align: center
+    }
+
+    .rubric, p.rubric {
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 120%;
+        color: var(--dark-green);
+        border-bottom: 1px solid var(--dark-green);
+    }
+
+  </style>
+{% endblock %}
+
+{% block menu %}
+<p class="caption">
+  <span class="caption-text">Getting Started:</span>
+</p>
+
+<ul>
+  <li class="toctree-l1"><a href="{{ pathto('index') }}">Welcome</a></li>
+  <li class="toctree-l1"><a href="{{ pathto('notes/installation') }}">Installation</a></li>
+  <li class="toctree-l1"><a href="{{ pathto('notes/overview') }}">API Overview</a></li>
+</ul>
+
+{{super()}}
+{% endblock %}
